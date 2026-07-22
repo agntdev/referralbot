@@ -1,10 +1,11 @@
 [
   {
-    "name": "/new starts the referral creation flow",
+    "name": "New referral button starts the flow",
     "steps": [
       {
-        "send": { "text": "/new" },
+        "send": { "callback": "new:show" },
         "expect": [
+          { "method": "answerCallbackQuery" },
           {
             "method": "sendMessage",
             "payload": {

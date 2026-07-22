@@ -1,0 +1,54 @@
+[
+  {
+    "name": "end-to-end referral creation flow",
+    "steps": [
+      {
+        "send": { "text": "/new" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": { "text": "What is the candidate's name?" }
+          }
+        ]
+      },
+      {
+        "send": { "text": "Alice Smith" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": { "text": "What is the reason or description for this referral?" }
+          }
+        ]
+      },
+      {
+        "send": { "text": "Strong backend engineer with Go experience" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": { "text": "Contact info or link? (tap Skip to skip)" }
+          }
+        ]
+      },
+      {
+        "send": { "text": "alice@example.com" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": { "text": "Tags or role? (tap Skip to skip)" }
+          }
+        ]
+      },
+      {
+        "send": { "text": "backend, senior" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "📋 Referral preview\n\n👤 Alice Smith\nStrong backend engineer with Go experience\n📞 alice@example.com\n🏷 backend, senior"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

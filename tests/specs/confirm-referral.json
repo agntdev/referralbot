@@ -1,19 +1,13 @@
 [
   {
-    "name": "Confirm",
+    "name": "Confirm button acknowledges callback",
     "steps": [
       {
+        "send": { "callback": "confirm:referral" },
         "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Post referral message to configured destination"
-            }
-          }
-        ],
-        "send": {
-          "callback": "confirm:referral"
-        }
+          { "method": "answerCallbackQuery" },
+          { "method": "sendMessage" }
+        ]
       }
     ]
   }

@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Settings button shows settings menu",
+    "steps": [
+      {
+        "send": { "callback": "settings:show" },
+        "expect": [
+          { "method": "answerCallbackQuery" },
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "⚙️ Settings\n\n📍 Destination: not set"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

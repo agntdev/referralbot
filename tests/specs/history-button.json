@@ -1,10 +1,11 @@
 [
   {
-    "name": "/history shows empty state",
+    "name": "History button shows empty state",
     "steps": [
       {
-        "send": { "text": "/history" },
+        "send": { "callback": "history:show" },
         "expect": [
+          { "method": "answerCallbackQuery" },
           {
             "method": "sendMessage",
             "payload": {
