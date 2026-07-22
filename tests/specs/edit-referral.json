@@ -1,19 +1,13 @@
 [
   {
-    "name": "Edit",
+    "name": "Edit button shows edit menu",
     "steps": [
       {
+        "send": { "callback": "edit:referral" },
         "expect": [
-          {
-            "method": "sendMessage",
-            "payload": {
-              "text": "Modify referral inputs after preview"
-            }
-          }
-        ],
-        "send": {
-          "callback": "edit:referral"
-        }
+          { "method": "answerCallbackQuery" },
+          { "method": "editMessageText" }
+        ]
       }
     ]
   }
